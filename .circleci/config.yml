@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:17.0.1
+    steps:
+      - checkout
+      - run: echo "On teste le job :)"
+      - run:
+          name: Test
+          command: mvn test
+workflows:
+  sample: 
+    jobs:
+      - build-and-test:
+        filters:
+            branches:
+              only: master
