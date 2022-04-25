@@ -6,6 +6,9 @@ jobs:
       - image: cimg/openjdk:17.0.1
     steps:
       - checkout
+      - run:
+          name: Build
+          command : mvn -B -DskipTests clean package
       - run: echo "On teste le job :)"
       - run:
           name: Test
