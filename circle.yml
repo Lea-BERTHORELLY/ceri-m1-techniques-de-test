@@ -6,14 +6,17 @@ jobs:
       - image: cimg/openjdk:11.0
     steps:
       - checkout
-      - run: echo "On teste le job :)"
+      - run:
+          name: Build
+          command : mvn -B -DskipTests clean package
+      - run: echo "On teste le job"
       - run:
           name: Test
           command: mvn test
 workflows:
   sample: 
     jobs:
-      - build-and-test:
-      - filters:
+    - build-and-test:
+        filters:
             branches:
               only: master
