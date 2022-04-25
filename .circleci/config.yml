@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Build
           command : mvn -B -DskipTests clean package
-      - run: echo "On teste le job :)"
+      - run: echo "On teste le job"
       - run:
           name: Test
           command: mvn test
