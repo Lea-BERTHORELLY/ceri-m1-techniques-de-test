@@ -35,7 +35,7 @@ public class IPokedexTest {
 		
 		System.out.println(pokedex.getPokemons());
 	}*/
-	public void getSizeTest() {
+	public void getSize() {
 		 when(pokedex.size()).thenAnswer(new Answer<Integer>(){
 
 			@Override
@@ -49,7 +49,7 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void addPokemonTest() { //ce test ne marche pas
+	public void addPokemon() { //ce test ne marche pas
 		when(pokedex.addPokemon(any())).thenAnswer(new Answer<Integer>() {
 
 			@Override
@@ -71,7 +71,7 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void getPokemonTest() {
+	public void getPokemon() {
 		try {
 			when(pokedex.getPokemon(anyInt())).thenAnswer(new Answer<Pokemon>() {
 				@Override
@@ -98,16 +98,17 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void getPokemonsTest() {
+	public void getPokemons() {
 		 when(pokedex.getPokemons()).thenReturn(listePokemon);
 		 List<Pokemon> pokemons = pokedex.getPokemons();
 		 assertEquals(pokemons.size(), 1);
 	}
 	
 	@Test
-	public void getPokemons2Test() {
+	public void getPokemons2() {
 		 when(pokedex.getPokemons(any())).thenAnswer(new Answer<List<Pokemon>>() {
 
+			@SuppressWarnings("unchecked")
 			@Override
 			public List<Pokemon> answer(InvocationOnMock invocation) throws Throwable {
 				// TODO Auto-generated method stub
