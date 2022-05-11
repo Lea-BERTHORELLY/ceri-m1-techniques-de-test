@@ -15,7 +15,7 @@ jobs:
           command: mvn test
       - codecov/upload
       - store_artifacts:
-                path:  targett
+                path:  target
 workflows:
   sample: 
     jobs:
