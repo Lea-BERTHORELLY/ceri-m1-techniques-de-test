@@ -6,4 +6,4 @@ M1 ILSEN Classique GR1
 
 
 # CodeCov
-[![Lea-BERTHORELLY](https://codecov.com/gh/Lea-BERTHORELLY/ceri-m1-techniques-de-test.svg?style=svg)]
+(https://codecov.com/gh/Lea-BERTHORELLY/ceri-m1-techniques-de-test.svg?style=svg)]
