@@ -28,9 +28,9 @@
     <outputDirectory>${project.build.directory}/classes</outputDirectory>
     <finalName>${project.artifactId}-${project.version}</finalName>
     <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
-    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-    <scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
-    <testSourceDirectory>${project.basedir}/src/test/java/fr.univavignon.pokedex.api</testSourceDirectory>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
   
   
   	<plugins>
@@ -70,30 +70,27 @@
 				<version>0.8.7</version>
 				<executions>
 					<execution>
+						<id>prepare-integration-tests</id>
+        				<phase>pre-integration-test</phase>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
+						<configuration>
+				          <destFile>${basedir}/target/jacoco-unit.exec</destFile>
+				        </configuration>
 					</execution>
 					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-						<configuration>
-							<!-- Sets the path to the file which contains the execution data. -->
-
-							<dataFile>target/jacoco.exec</dataFile>
-							<!-- Sets the output directory for the code coverage report. -->
-							<outputDirectory>target/my-reports</outputDirectory>
-						</configuration>
+						<id>jacoco-site</id>
+				        <phase>post-integration-test</phase>
+				        <goals>
+				          <goal>report</goal>
+				        </goals>
+				        <configuration>
+				          <dataFile>${basedir}/target/jacoco-unit.exec</dataFile>
+				        </configuration>
+						
 					</execution>
 				</executions>
-				<configuration>
-					<systemPropertyVariables>
-						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
-					</systemPropertyVariables>
-				</configuration>
 				
   		</plugin>
   		
