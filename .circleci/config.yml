@@ -16,14 +16,8 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - codecov/upload:
-        file: target/my-reports/jacoco.xml
-      - store_artifacts:
-            path:  target
+      - codecov/upload
 workflows:
   sample: 
     jobs:
-    - build-and-test:
-        filters:
-            branches:
-              only: master
+    - build-and-test
