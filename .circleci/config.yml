@@ -17,6 +17,12 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload
+      - run:
+          name: Site
+          command: mvn site
+      - run:
+          name: Post-site
+          command: mvn post-site
 workflows:
   sample: 
     jobs:
