@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - codecov/upload:
+      - codecov/upload
       - store_artifacts:
                 path:  targett
 workflows:
