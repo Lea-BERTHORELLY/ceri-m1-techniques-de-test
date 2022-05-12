@@ -7,6 +7,6 @@ M1 ILSEN Classique GR1
 
 # CodeCov et couverture donnée par Eclipse
 [![codecov](https://codecov.io/gh/Lea-BERTHORELLY/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=SEP8M633UH)](https://codecov.io/gh/Lea-BERTHORELLY/ceri-m1-techniques-de-test)
-[Couverture](https://github.com/Lea-BERTHORELLY/ceri-m1-techniques-de-test/blob/master/coverage.png?raw=true)
+https://github.com/Lea-BERTHORELLY/ceri-m1-techniques-de-test/blob/master/coverage.png?raw=true
 
 
